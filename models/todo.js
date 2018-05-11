@@ -2,14 +2,55 @@
 
 module.exports = function(sequelize, DataTypes) {
     var Member = sequelize.define("Member", {
-      answer: DataTypes.STRING
+      first: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        validate: {
+          notEmpty: true,
+          len: [1,50]
+        }
+      },
+      last: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        validate: {
+          notEmpty: true,
+          len: [1,50]
+        }
+      },
+      password: {
+        type: Sequelize.VIRTUAL,
+        allowNull: false,
+        validate: {
+          notEmpty: true
+        }
+      },
     });
     return Member;
   };
 
   module.exports = function(sequelize, DataTypes) {
+    var Bio = sequelize.define("Bio", {
+      body: {
+        type: DataTypes.TEXT,
+        allowNull: false,
+        validate: {
+          len: [1]
+        }
+      }
+    });
+    return Bio;
+  };
+  
+
+  module.exports = function(sequelize, DataTypes) {
     var Genre = sequelize.define("Genre", {
-      answer: DataTypes.STRING
+     Rock:DataTypes.BOOLEAN,
+     Punk:DataTypes.BOOLEAN,
+     Pop:DataTypes.BOOLEAN,
+     Country:DataTypes.BOOLEAN,
+     Rap:DataTypes.BOOLEAN,     
+     RNB:DataTypes.BOOLEAN
     });
     return Genre;
   };
