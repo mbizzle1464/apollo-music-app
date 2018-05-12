@@ -1,50 +1,21 @@
-<!-- <div id="profileHeader" class="card"> -->
-<div id="sup">
-    <nav>
-        <div id="navsign" class="nav-wrapper">
-            <a href="/" class="brand-logo">Apollo</a>
+
+<div class="container">
+    <div class="container">
+        <div class="jumbotron">
+            <img class="logo img-responsive" src="/img/apollo.png" alt="apollo">
+            <h1 class="text-center">Apollo</h1>
         </div>
-    </nav>
+        <form method="POST" action="/signup" class="form-signin">
+            <h2 class="form-signin-heading">Create an account</h2>
 
-
-
-    <form name="myForm" action="user/signup" method="post">
-        <!-- <div class="row"> -->
-        <div class="container" id="mainsignup">
-            <h3>Sign Up</h3>
-            <div class="row">
-                <div class="input-field col s6">
-                    First Name:
-                    <input id="firstName" type="text" class="validate" name="firstName" required>
-                    <label for="first_name"></label>
-                </div>
-                <div class="input-field col s6">
-                    Last Name:
-                    <input id="lastName" type="text" class="validate" name="lastName" required>
-                    <label for="last_name"></label>
-                </div>
-            </div>
-            <div class="row">
-            </div>
-            <div class="row">
-                <div class="input-field col s6">
-                    Email:
-                    <input id="username" type="email" class="validate" name="email" required>
-                    <label for="email"></label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s6">
-                    Password:
-                    <input id="password" type="password" class="validate" name="password" required>
-                    <label for="password"></label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col s12">
-                </div>
-                <input class="btn" type="submit" value="Submit">
-            </div>
-        </div>
-    </form>
-</div>
+            <label for="inputFirstName" class="sr-only">First Name</label>
+            <input type="text" id="inputFirstName" name="firstName" class="form-control" placeholder="First Name" required autofocus>
+            <label for="inputLastName" class="sr-only">Last Name</label>
+            <input type="text" id="inputLastName" name="lastName" class="form-control" placeholder="Last Name" required autofocus>
+            <label for="inputEmail" class="sr-only">email</label>
+            <input type="email" id="inputEmail" name="email" class="form-control" placeholder="email@email.com" required autofocus>
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>            
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+        </form>
+    </div>

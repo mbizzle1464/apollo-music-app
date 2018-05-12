@@ -1,40 +1,16 @@
-<!-- <div id="profileHeader" class="card"> -->
-<div id="log">
-    <nav>
-        <div id="navlog" class="nav-wrapper">
-            <a href="/" class="brand-logo">Apollo</a>
-        </div>
-    </nav>
+<div class="container">
+    <div class="jumbotron">
+        <img class="logo img-responsive" src="/img/apollo.png" alt="apollo">
+        <h1 class="text-center">Apollo</h1>
+    </div>
+    <form method="POST" action="/login" class="form-signin">
+        <h2 class="form-signin-heading">Please log in</h2>
 
-    <form name="myForm" action="user/login" onsubmit="return validateForm()" method="post">
-        <!-- <div class="row"> -->
-        <div class="container" id="mainlogin">
-            <h3>Log in </h3>
-            <div class="row">
-                <div class="row">
-                    <div class="input-field col s6">
-                        Email:
-                        <input id="username" type="email" class="validate" name="email" required>
-                        <label for="email"></label>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-            </div>
-            <div class="row">
-                <div class="input-field col s6">
-                    Password:
-                    <input id="password" type="password" class="validate" name="password" required>
-                    <label for="password"></label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col s12">
-                </div>
-                <a href="#">
-                    <button class="btn" type="submit" value="Log in">Log in </button>
-                </a>
-            </div>
-        </div>
+        <label for="inputUsername" class="sr-only">Username</label>
+        <input type="text" id="inputUsername" name="username" class="form-control" placeholder="Username" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
+        <a href="/signup" class="btn btn-lg btn-primary btn-block">Register</a>
     </form>
 </div>
