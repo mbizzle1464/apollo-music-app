@@ -72,7 +72,7 @@ router.post('/user/login', function (req, res, next) {
 
 
 router.post('/user/signup', function (req, res, next) {
-    console.log(req.body.username, req.body.password);
+   // console.log(req.body.username, req.body.password);
     passport.authenticate('local-signup', function (error, user, info) {
         signInUser(req, res, error, user, info);
     })(req, res, next);
