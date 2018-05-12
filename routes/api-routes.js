@@ -9,5 +9,10 @@ var db = require("../models");
 
 // Routes =============================================================
 module.exports = function(app) {
+    app.get("", function(req,res){
 
+    });
+    app.get("", function(req,res){
+
+    });
 };
