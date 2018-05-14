@@ -106,10 +106,3 @@ body {
   display: inline-block;
   border-radius: 50%;
 }
-
-/*shamil.css*/
-
-#content{
-  display: grid;
-  grid-template-columns: 33.3%, 33.3%
-}
