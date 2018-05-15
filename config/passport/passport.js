@@ -1,9 +1,10 @@
  //load bcrypt
  var bCrypt = require('bcrypt-nodejs');
+ var db = require('../../models');
 
  module.exports = function (passport, user) {
 
-     var User = user;
+     var User = db.Author;
      var LocalStrategy = require('passport-local').Strategy;
 
 
@@ -98,7 +99,7 @@
 
          function (req, email, password, done) {
 
-             var User = user;
+             var User = db.Author;
 
              var isValidPassword = function (userpass, password) {
                  return bCrypt.compareSync(password, userpass);

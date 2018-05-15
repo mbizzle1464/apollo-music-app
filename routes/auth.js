@@ -1,6 +1,9 @@
-var authController = require('../controllers/authcontroller.js');
+var authController = require('../controllers/auth-controller.js');
+var db = require("../models");
 
 module.exports = function (app, passport) {
+
+    app.get('/', authController.signin);
 
     app.get('/signup', authController.signup);
 

@@ -12,7 +12,12 @@ exports.signin = function (req, res) {
 }
 exports.dashboard = function (req, res) {
 
-    res.render('bio');
+    res.render('users');
+
+}
+exports.dashboard = function (req, res) {
+
+    res.render('cms');
 
 }
 exports.dashboard = function (req, res) {
@@ -25,7 +30,7 @@ exports.logout = function (req, res) {
 
     req.session.destroy(function (err) {
 
-        res.redirect('/');
+        res.redirect('/signin');
 
     });
 

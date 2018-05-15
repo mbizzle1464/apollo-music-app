@@ -2,6 +2,7 @@ var express = require('express');
 var passport = require('passport');
 var session = require('express-session');
 var bodyParser = require('body-parser');
+var cookieParser = require("cookie-parser");
 var env = require('dotenv').load();
 var exphbs = require('express-handlebars');
 
@@ -10,23 +11,24 @@ var exphbs = require('express-handlebars');
 var app = express();
 var PORT = process.env.PORT || 8080;
 
-//For BodyParser
+//Body Parser Middleware
 app.use(bodyParser.urlencoded({
   extended: true
 }));
 app.use(bodyParser.json());
+app.use(cookieParser());
 
 // Static directory
 app.use(express.static("public"));
 
-// For Passport
+//Express - Session
 app.use(session({
-  secret: 'keyboard cat',
+  secret: 'secret',
   resave: true,
   saveUninitialized: true
-})); // session secret
+}));
 app.use(passport.initialize());
-app.use(passport.session()); // persistent login sessions
+app.use(passport.session());
 
 //db
 var db = require("./models");
@@ -39,20 +41,24 @@ app.engine('hbs', exphbs({
 }));
 app.set('view engine', '.hbs');
 
+// Routes
+// =============================================================
 //Routes
-
 var authRoute = require('./routes/auth.js')(app, passport);
-
 //load passport strategies
 require('./config/passport/passport.js')(passport, db.user);
+var postController = require("./controllers/post-controller.js");
+var authorController = require("./controllers/author-controller.js");
+var viewController = require("./controllers/view-controller.js");
 
-
+app.use(postController);
+app.use(authorController);
+app.use(viewController);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
 db.sequelize.sync().then(function () {
   app.listen(PORT, function () {
-    console.log('Nice! Database looks fine')
     console.log("App listening on PORT " + PORT);
   });
 });
