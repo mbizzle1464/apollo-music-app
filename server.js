@@ -50,9 +50,11 @@ require('./config/passport/passport.js')(passport, db.user);
 var postController = require("./controllers/post-controller.js");
 var authorController = require("./controllers/author-controller.js");
 var viewController = require("./controllers/view-controller.js");
+var profileController = require("./controllers/profile-controller.js");
 
 app.use(postController);
 app.use(authorController);
+app.use(profileController);
 app.use(viewController);
 
 // Syncing our sequelize models and then starting our Express app

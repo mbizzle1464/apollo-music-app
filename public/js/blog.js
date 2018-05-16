@@ -51,7 +51,7 @@ $(document).ready(function() {
      function renderPosts(rows) {
        authorList.children().not(":last").remove();
        blogContainer.children(".alert").remove();
-         //console.log(rows);
+         console.log(rows);
          authorList.prepend(rows);
      }
 
@@ -59,6 +59,7 @@ $(document).ready(function() {
     function createNewRow(post) {
       console.log(post);
       var newTr = $("<tr>");
+      newTr.addClass("Entries");  
        var formattedDate = new Date(post.createdAt);
        formattedDate = moment(formattedDate).format("MMMM Do YYYY, h:mm:ss a");
        var authorName;
@@ -66,7 +67,7 @@ $(document).ready(function() {
 
        newTr.data("author", post);
        newTr.append("<tr><th class='authorName'>" + authorName + "</th></tr>");
-       newTr.append("<tr><td class='authorUserName'><a href='/dashboard?author_id=" + post.AuthorId + "'> @" + post.Author.username + "</a></td></tr>");
+       newTr.append("<tr><td class='authorUserName'><a href='/cms?author_id=" + post.AuthorId + "'> @" + post.Author.username + "</a></td></tr>");
        newTr.append("<tr><td class='post'>" + post.body + "</td></tr>");
        newTr.append("<tr><td class='date'>" + formattedDate + "</td></tr>");
        return newTr;
