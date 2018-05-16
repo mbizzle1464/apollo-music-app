@@ -3,6 +3,7 @@ $(document).ready(function() {
 
   // blogContainer holds all of our posts
   var blogContainer = $(".blog-container");
+  var authorList = $("tbody");
   var postCategorySelect = $("#category");
   // Click events for the edit and delete buttons
   $(document).on("click", "button.delete", handlePostDelete);
@@ -44,48 +45,31 @@ $(document).ready(function() {
       for (var i = 0; i < posts.length; i++) {
         postsToAdd.push(createNewRow(posts[i]));
       }
-      blogContainer.append(postsToAdd);
+      renderPosts(postsToAdd);
     }
+
+     function renderPosts(rows) {
+       authorList.children().not(":last").remove();
+       blogContainer.children(".alert").remove();
+         //console.log(rows);
+         authorList.prepend(rows);
+     }
 
     // This function constructs a post's HTML
     function createNewRow(post) {
-      var formattedDate = new Date(post.createdAt);
-      formattedDate = moment(formattedDate).format("MMMM Do YYYY, h:mm:ss a");
-      var newPostCard = $("<div>");
-      newPostCard.addClass("card");
-      var newPostCardHeading = $("<div>");
-      newPostCardHeading.addClass("panel-heading");
-      var deleteBtn = $("<button>");
-      deleteBtn.text("x");
-      deleteBtn.addClass("delete btn btn-danger");
-      var editBtn = $("<button>");
-      editBtn.text("EDIT");
-      editBtn.addClass("edit btn btn-info");
-      var newPostTitle = $("<h3>");
-      var newPostDate = $("<h5>");
-      var newPostAuthor = $("<h2>");
-      newPostAuthor.text(post.Author.firstname);
-      newPostAuthor.css({
-        float: "left",
-        color: "blue",
-        "margin-top": "-10px"
-      });
-      var newPostCardBody = $("<div>");
-      newPostCardBody.addClass("panel-body");
-      var newPostBody = $("<p>");
-      //newPostTitle.text(post.title + " ");
-      newPostBody.text(post.body);
-      newPostDate.text(formattedDate);
-      newPostCardHeading.append(newPostAuthor);
-      newPostTitle.append(newPostDate);
-      //newPostCardHeading.append(deleteBtn);
-      //newPostCardHeading.append(editBtn);
-      //newPostCardHeading.append(newPostTitle);
-      newPostCardBody.append(newPostBody);
-      newPostCard.append(newPostCardHeading);
-      newPostCard.append(newPostCardBody);
-      newPostCard.data("post", post);
-      return newPostCard;
+      console.log(post);
+      var newTr = $("<tr>");
+       var formattedDate = new Date(post.createdAt);
+       formattedDate = moment(formattedDate).format("MMMM Do YYYY, h:mm:ss a");
+       var authorName;
+      authorName = post.Author.firstname + " " + post.Author.lastname;  
+
+       newTr.data("author", post);
+       newTr.append("<tr><th class='authorName'>" + authorName + "</th></tr>");
+       newTr.append("<tr><td class='authorUserName'><a href='/dashboard?author_id=" + post.AuthorId + "'> @" + post.Author.username + "</a></td></tr>");
+       newTr.append("<tr><td class='post'>" + post.body + "</td></tr>");
+       newTr.append("<tr><td class='date'>" + formattedDate + "</td></tr>");
+       return newTr;
     }
 
   // This function does an API call to delete posts
