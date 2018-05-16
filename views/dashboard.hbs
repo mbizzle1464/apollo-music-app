@@ -10,7 +10,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/">Apollo</a>
+                <a class="navbar-brand" href="/dashboard">Apollo</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -20,7 +20,7 @@
                         <a href="/cms">New Post</a>
                     </li>
                     <li>
-                        <a href="/authors">Manage Authors</a>
+                        <a href="/authors">Users</a>
                     </li>
                     <li>
                         <a href="/logout">Logout</a>
@@ -33,22 +33,14 @@
     </nav>
 <div class="container blog">
     <div class="row">
-        <div class="col-md-12 blog-container">
-            {{#each Posts}}
-            <div class="panel panel-default" data-post="{{id}}">
-                <div class="panel-heading">
-                    <button class="delete btn btn-danger">x</button>
-                    <button class="edit btn btn-info">EDIT</button>
-                    <h2>{{title}}</h2>
-                    <small>{{createdAt}}</small>
-                    </h2>
-                    <h5 style="float: right; color: blue; margin-top: -10px;">Written by: {{Author.firstname}} </h5>
-                </div>
-                <div class="panel-body">
-                    <p>{{body}}</p>
+        <div class="col-md-8 offset-md-2">
+            <div class="container">
+                <h1>News Feed</h1>
+                <div class="row">
+                    <div class="col-md-12 blog-container">
+                    </div>
                 </div>
             </div>
-            {{/each}}
         </div>
     </div>
 </div>
