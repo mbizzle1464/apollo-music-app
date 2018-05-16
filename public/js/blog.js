@@ -73,14 +73,14 @@ $(document).ready(function() {
       var newPostCardBody = $("<div>");
       newPostCardBody.addClass("panel-body");
       var newPostBody = $("<p>");
-      newPostTitle.text(post.title + " ");
+      //newPostTitle.text(post.title + " ");
       newPostBody.text(post.body);
       newPostDate.text(formattedDate);
       newPostCardHeading.append(newPostAuthor);
       newPostTitle.append(newPostDate);
       //newPostCardHeading.append(deleteBtn);
       //newPostCardHeading.append(editBtn);
-      newPostCardHeading.append(newPostTitle);
+      //newPostCardHeading.append(newPostTitle);
       newPostCardBody.append(newPostBody);
       newPostCard.append(newPostCardHeading);
       newPostCard.append(newPostCardBody);

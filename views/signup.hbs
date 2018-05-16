@@ -1,13 +1,199 @@
 <div class="container">
     <form id="signup" name="signup" method="post" action="/signup">
-        <label for="email">Email Address</label>
-        <input class="form-control" placeholder="email@email.com" class="text" name="email" type="email" required autofocus />
+    <h3>The Basics</h3>
         <label for="firstname">First Name</label>
         <input class="form-control" placeholder="First Name" name="firstname" type="text" required autofocus />
         <label for="lastname">Last Name</label>
         <input class="form-control" placeholder="Last Name" name="lastname" type="text" required autofocus/>
+        <label for="username">User Name</label>
+        <input class="form-control" placeholder="musiclover1234" name="username" type="text" required autofocus/>
+        <label for="email">Email Address</label>
+        <input class="form-control" placeholder="email@email.com" class="text" name="email" type="email" required autofocus />
         <label for="password">Password</label>
         <input class="form-control" placeholder="Password" name="password" type="password" required/>
+        <h3>Tell Us About Yourself</h3>
+        <label for="picture">Picture</label>
+        <input class="form-control" placeholder="Add Profile Picture" name="picture" type="file" />
+        <label for="favoriteSong">Favorite Song</label>
+        <input class="form-control" placeholder="Don't Stop Believing" name="favoriteSong" type="text-area" />
+        <label for="favoriteArtist">Favorite Artist</label>
+        <input class="form-control" placeholder="Journey" name="favoriteArtist" type="text-area" />
+        <label for="favoriteCoverBand">Favorite Cover Band</label>
+        <input class="form-control" placeholder="Resurrection - A Journey Tribute" name="favoriteCoverBand" type="text-area" />
+        <label for="profileBody">Bio</label>
+        <input class="form-control" placeholder="Tell us about your passion for music" name="profileBody" type="text-area"/>
+<div class="col-md-4">
+    <h3>Favorite Genres</h3>
+    <div class="col-md-6">
+    <div class="checkbox">
+        <label for="genreRock">
+            <input type="checkbox" name="genreRock" id="genreRock" value="1"> Rock-n-Roll
+        </label>
+    </div>
+    <div class="checkbox">
+        <label for="genreSoftRock">
+            <input type="checkbox" name="genreSoftRock" id="genreSoftRock" value="1"> Soft Rock
+        </label>
+    </div>
+    <div class="checkbox">
+        <label for="genreEasyListen">
+            <input type="checkbox" name="genreEasyListen" id="genreEasyListen" value="1"> Easy Listening
+        </label>
+    </div>
+    <div class="checkbox">
+        <label for="genreClassicRock">
+            <input type="checkbox" name="genreClassicRock" id="genreClassicRock" value="1"> Classic Rock
+        </label>
+    </div>
+    <div class="checkbox">
+        <label for="genrePunk">
+            <input type="checkbox" name="genrePunk" id="genrePunk" value="1"> Punk Rock
+        </label>
+    </div>
+    <div class="checkbox">
+        <label for="genreTodayHits">
+            <input type="checkbox" name="genreTodayHits" id="genreTodayHits" value="1"> Today's Hits
+        </label>
+    </div>
+    <div class="checkbox">
+        <label for="genrePopRock">
+            <input type="checkbox" name="genrePopRock" id="genrePopRock" value="1"> Pop Rock
+        </label>
+    </div>
+    </div>
+    <div class="col-md-6">
+    <div class="checkbox">
+        <label for="genrePunkPop">
+            <input type="checkbox" name="genrePunkPop" id="genrePunkPop" value="1"> Punk Pop
+        </label>
+    </div>
+    <div class="checkbox">
+        <label for="genreCountry">
+            <input type="checkbox" name="genreCountry" id="genreCountry" value="1"> Country
+        </label>
+    </div>
+    <div class="checkbox">
+        <label for="genreRap">
+            <input type="checkbox" name="genreRap" id="genreRap" value="1"> Rap
+        </label>
+    </div>
+    <div class="checkbox">
+        <label for="genreRNB">
+            <input type="checkbox" name="genreRNB" id="genreRNB" value="1"> R-n-B
+        </label>
+    </div>
+    <div class="checkbox">
+        <label for="genreKPop">
+            <input type="checkbox" name="genreKPop" id="genreKPop" value="1"> K Pop
+        </label>
+    </div>
+    <div class="checkbox">
+        <label for="genreClassical">
+            <input type="checkbox" name="genreClassical" id="genreClassical" value="1"> Classical
+        </label>
+    </div>
+    <div class="checkbox">
+        <label for="genreYachtRock">
+            <input type="checkbox" name="genreYachtRock" id="genreYachtRock" value="1"> Yacht Rock
+        </label>
+    </div>
+    </div>
+</div>
+<div class="col-md-4">
+    <h3>Favorite Decade of Music</h3>
+    <div class="col-md-6">
+    <div class="checkbox">
+        <label for="decadeTwenties">
+            <input type="checkbox" name="decadeTwenties" id="decadeTwenties" value="1"> 1920s
+        </label>
+    </div>
+    <div class="checkbox">
+        <label for="decadeThirties">
+            <input type="checkbox" name="decadeThirties" id="decadeThirties" value="1"> 1930s
+        </label>
+    </div>
+    <div class="checkbox">
+        <label for="decadeforties">
+            <input type="checkbox" name="decadeforties" id="decadeforties" value="1"> 1940s
+        </label>
+    </div>
+    <div class="checkbox">
+        <label for="decadeFifties">
+            <input type="checkbox" name="decadeFifties" id="decadeFifties" value="1"> 1950s
+        </label>
+    </div>
+    <div class="checkbox">
+        <label for="decadeSixties">
+            <input type="checkbox" name="decadeSixties" id="decadeSixties" value="1"> 1960s
+        </label>
+    </div>
+    </div>
+    <div class="col-md-6">
+    <div class="checkbox">
+        <label for="decadeSeventies">
+            <input type="checkbox" name="decadeSeventies" id="decadeSeventies" value="1"> 1970s
+        </label>
+    </div>
+    <div class="checkbox">
+        <label for="decadeEighties">
+            <input type="checkbox" name="decadeEighties" id="decadeEighties" value="1"> 1980s
+        </label>
+    </div>
+    <div class="checkbox">
+        <label for="decadeNineties">
+            <input type="checkbox" name="decadeNineties" id="decadeNineties" value="1"> 1990s
+        </label>
+    </div>
+    <div class="checkbox">
+        <label for="decadeNoughties">
+            <input type="checkbox" name="decadeNoughties" id="decadeNoughties" value="1"> 2000s
+        </label>
+    </div>
+    </div>
+</div>
+<div class="col-md-4">
+    <h3>Preferred Way to Listen</h3>
+    <div class="col-md-6">
+    <div class="checkbox">
+        <label for="listenRadio">
+            <input type="checkbox" name="listenRadio" id="listenRadio" value="1"> Radio
+        </label>
+    </div>
+    <div class="checkbox">
+        <label for="listenSatelitte">
+            <input type="checkbox" name="listenSatelitte" id="listenSatelitte" value="1"> Satellite Radio
+        </label>
+    </div>
+    <div class="checkbox">
+        <label for="listenCassette">
+            <input type="checkbox" name="listenCassette" id="listenCassette" value="1"> Cassette
+        </label>
+    </div>
+    <div class="checkbox">
+        <label for="listenEightTrack">
+            <input type="checkbox" name="listenEightTrack" id="listenEightTrack" value="1"> 8-track
+        </label>
+    </div>
+    </div>
+    <div class="col-md-6">
+    <div class="checkbox">
+        <label for="listenCompactDisc">
+            <input type="checkbox" name="listenCompactDisc" id="listenCompactDisc" value="1"> Compact Discs
+        </label>
+    </div>
+    <div class="checkbox">
+        <label for="listenOnline">
+            <input type="checkbox" name="listenOnline" id="listenOnline" value="1"> Stream Online
+        </label>
+    </div>
+    <div class="checkbox">
+        <label for="listenRecord">
+            <input type="checkbox" name="listenRecord" id="listenRecord" value="1"> Vinyl
+        </label>
+    </div>
+    </div>
+</div>
+
         <button class="btn btn-lg btn-primary btn-block" type="submit" value="Sign Up">Sign up</button>
 
     </form>

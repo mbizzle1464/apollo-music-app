@@ -13,6 +13,9 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       len: [1]
     },
+    picture: {
+      type: DataTypes.STRING,
+    },
   });
 
   

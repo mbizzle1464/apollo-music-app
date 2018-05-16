@@ -15,9 +15,16 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.STRING,
         notEmpty: true
       },
+      username: {
+        type: DataTypes.STRING,
+        notEmpty: true
+},
       password: {
         type: DataTypes.STRING,
         allowNull: false
+      },
+      picture: {
+        type: DataTypes.STRING,
       },
       favoriteSong: {
         type: DataTypes.STRING,
@@ -41,6 +48,26 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.BOOLEAN,
         defaultValue: false
       },
+      genreSoftRock: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false
+      },
+      genreEasyListen: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false
+      },
+      genreClassicRock: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false
+      },
+      genreTodayHits: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false
+      },
+      genrePopRock: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false
+      },
       genrePunk: {
         type: DataTypes.BOOLEAN,
         defaultValue: false
@@ -58,6 +85,30 @@ module.exports = function(sequelize, DataTypes) {
         defaultValue: false
       },
       genreRNB: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false
+      },
+      genreKPop: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false
+      },
+      genreClassical: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false
+      },
+      genreYachtRock: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false
+      },
+      decadeTwenties: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false
+      },
+      decadeThirties: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false
+      },
+      decadeforties: {
         type: DataTypes.BOOLEAN,
         defaultValue: false
       },
@@ -85,11 +136,27 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.BOOLEAN,
         defaultValue: false
       },
-      listenAudio: {
+      listenRadio: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false
+      },
+      listenSatelitte: {
         type: DataTypes.BOOLEAN,
         defaultValue: false
       },
       listenCassette: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false
+      },
+      listenEightTrack: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false
+      },
+      listenCompactDisc: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false
+      },
+      listenOnline: {
         type: DataTypes.BOOLEAN,
         defaultValue: false
       },
