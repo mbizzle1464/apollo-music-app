@@ -1,16 +1,12 @@
 $(document).ready(function() {
-  // Getting jQuery references to the post body, title, form, and author select
   var bodyInput = $("#body");
   var titleInput = $("#title");
   var cmsForm = $("#cms");
   var authorSelect = $("#author");
-  // Adding an event listener for when the form is submitted
   $(cmsForm).on("submit", handleFormSubmit);
-  // Gets the part of the url that comes after the "?" (which we have if we're updating a post)
   var url = window.location.search;
   var postId;
   var authorId;
-  // Sets a flag for whether or not we're updating a post to be false initially
   var updating = false;
 
   // If we have this section in our url, we pull out the post id from the url
@@ -130,4 +126,22 @@ $(document).ready(function() {
       window.location.href = "/dashboard";
     });
   }
+
+  function getAuthor(author) {
+    authorId = author || "";
+    if (authorId) {
+      authorId = "/?author_id=" + authorId;
+    }
+    $.get("/api/cms" + authorId, function (data) {
+      console.log(data);
+    });
+}
+
+  function upsertAuthor(authorData) {
+    console.log(authorData)
+    $.post("/api/authors", authorData)
+      .then(getAuthors);
+  }
+
+
 });
