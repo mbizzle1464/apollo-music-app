@@ -33,24 +33,18 @@
 <div class="container">
     <div class="row">
         <div class="col-md-3">
-            <img class="rounded mx-auto img-fluid" src="{{this.Authorpicture}}" alt="{{this.Authorusername}}">
-            <h1>Name: {{this.Authorfirstname}} {{this.Authorlastname}}</h1>
-            <h2>@{{this.AuthorUserName}}</h2>
-            <p>{{this.AuthorprofileBody}}</p>
+            <!-- working on getting dynamic content in this area-->
+            <img class="rounded mx-auto img-fluid" src="{{this.picture}}" alt="{{this.username}}">
+            <h1 id ="profile">Name: {{this.firstname}} {{this.lastname}}</h1>
+            <h2 id ="profile">@{{this.username}}</h2>
+            <p id ="profile">{{this.profileBody}}</p>
         </div>
         <div class="col-md-9">
             <form id="cms">
                 <div class="form-group">
-                    <label for="title">Title:</label>
-                    <input placeholder="Post Title" type="text" class="form-control" id="title">
                     <br />
                     <label for="body">Body:</label>
                     <textarea placeholder="Post Body" class="form-control" rows="10" id="body"></textarea>
-                    <div class="form-group">
-                        <label for="category">Select Author:</label>
-                        <select class="form-control" id="author">
-                        </select>
-                    </div>
                     <br />
                     <button type="submit" class="btn btn-success submit">Submit</button>
                 </div>

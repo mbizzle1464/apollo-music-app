@@ -1,3 +1,6 @@
+// Need to clean this up. 
+
+
 $(document).ready(function() {
   /* global moment */
 
@@ -5,9 +8,11 @@ $(document).ready(function() {
   var blogContainer = $(".blog-container");
   var authorList = $("tbody");
   var postCategorySelect = $("#category");
+ 
   // Click events for the edit and delete buttons
   $(document).on("click", "button.delete", handlePostDelete);
   $(document).on("click", "button.edit", handlePostEdit);
+
 
    // The code below handles the case where we want to get blog posts for a specific user
    // Looks for a query param in the url for user_id
@@ -20,6 +25,13 @@ $(document).ready(function() {
    // If there's no userId we just get all posts as usual
    else {
      getPosts();
+     getAuthor();
+   }
+
+   function getAuthor(author) {
+     $.get("/api/authors").done(function (data) {
+       console.log("authors", data);
+     });
    }
 
    function getPosts(author) {
@@ -116,4 +128,6 @@ $(document).ready(function() {
     blogContainer.append(messageh2);
   }
 
+
 });
+

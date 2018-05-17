@@ -1,8 +1,10 @@
+// Currently working on this section
+
+
+
 $(document).ready(function() {
   var bodyInput = $("#body");
-  var titleInput = $("#title");
   var cmsForm = $("#cms");
-  var authorSelect = $("#author");
   $(cmsForm).on("submit", handleFormSubmit);
   var url = window.location.search;
   var postId;
@@ -23,18 +25,23 @@ $(document).ready(function() {
   // Getting the authors, and their posts
   getAuthors();
 
+    // A function to get Authors and then render our list of Authors
+  function getAuthors() {
+    $.get("/api/authors").done(function (data) {
+      console.log("authors", data);
+    });
+  }
+
+
   // A function for handling what happens when the form to create a new post is submitted
   function handleFormSubmit(event) {
     event.preventDefault();
     // Wont submit the post if we are missing a body, title, or author
-    if (!titleInput.val().trim() || !bodyInput.val().trim() || !authorSelect.val()) {
+    if (!bodyInput.val().trim()) {
       return;
     }
     // Constructing a newPost object to hand to the database
     var newPost = {
-      title: titleInput
-        .val()
-        .trim(),
       body: bodyInput
         .val()
         .trim(),
@@ -84,27 +91,6 @@ $(document).ready(function() {
         updating = true;
       }
     });
-  }
-
-  // A function to get Authors and then render our list of Authors
-  function getAuthors() {
-    $.get("/api/authors", renderAuthorList);
-  }
-  // Function to either render a list of authors, or if there are none, direct the user to the page
-  // to create an author first
-  function renderAuthorList(data) {
-    if (!data.length) {
-      window.location.href = "/authors";
-    }
-    var rowsToAdd = [];
-    for (var i = 0; i < data.length; i++) {
-      rowsToAdd.push(createAuthorRow(data[i]));
-    }
-    authorSelect.empty();
-    console.log(rowsToAdd);
-    console.log(authorSelect);
-    authorSelect.append(rowsToAdd);
-    authorSelect.val(authorId);
   }
 
   // Creates the author options in the dropdown
