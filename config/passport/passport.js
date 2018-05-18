@@ -2,6 +2,7 @@
  var bCrypt = require('bcrypt-nodejs');
  var db = require('../../models');
 
+
  module.exports = function (passport, user) {
 
      var User = db.Author;
@@ -44,7 +45,7 @@
              User.findOne({
                  where: {
                      email: email
-                 }
+                 }, 
              }).then(function (user) {
 
                  if (user) {

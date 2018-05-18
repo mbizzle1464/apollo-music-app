@@ -15,11 +15,12 @@ router.get("/api/cms", function (req, res) {
     });
 });
 
-router.get("/api/cms/:id", function (req, res) {
+router.get("/api/cms/author/:id", function (req, res) {
     db.Author.findOne({
         where: {
             id: req.params.id
-        }
+        },
+        include: [db.Post]
     }).then(function (dbAuthor) {
         res.json(dbAuthor);
     });

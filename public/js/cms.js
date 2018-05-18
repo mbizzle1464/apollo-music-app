@@ -8,26 +8,11 @@ $(document).ready(function () {
   var updating = false;
 
   
-
   if (url.indexOf("?post_id=") !== -1) {
     postId = url.split("=")[1];
     getPostData(postId, "post");
   } else if (url.indexOf("?author_id=") !== -1) {
     authorId = url.split("=")[1];
-  }
-
-  getAuthors();
-
-  function getAuthors() {
-    $.get("/api/authors").done(function (data) {
-      console.log("authors", data);
-      for (var i = 0; i < data.length; i++) {
-        //console.log(data[i]);  
-        authorId = data[i].id;
-      }
-      profile = url + authorId;  
-      console.log(profile);
-    });
   }
 
   function handleFormSubmit(event) {

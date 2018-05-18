@@ -56,7 +56,7 @@ $(document).ready(function () {
 
     newTr.data("author", post);
     newTr.append("<tr><th class='authorName'>" + authorName + "</th></tr>");
-    newTr.append("<tr><td class='authorUserName'><a href='/cms?author_id=" + post.AuthorId + "'> @" + post.Author.username + "</a></td></tr>");
+    newTr.append("<tr><td class='authorUserName'><a href='/cms/author/" + post.AuthorId + "'> @" + post.Author.username + "</a></td></tr>");
     newTr.append("<tr><td class='post'>" + post.body + "</td></tr>");
     newTr.append("<tr><td class='date'>" + formattedDate + "</td></tr>");
     return newTr;

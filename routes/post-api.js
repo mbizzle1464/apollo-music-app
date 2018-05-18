@@ -29,14 +29,13 @@ router.get("/api/posts/:id", function (req, res) {
       id: req.params.id
     }
   }).then(function (dbPost) {
-    console.log(dbPost);
     res.json(dbPost);
   });
 });
 
 router.post("/api/posts", function (req, res) {
   db.Post.create(req.body).then(function (dbPost) {
-    res.json(dbPost);
+    res.render('dashboard');
   });
 });
 
