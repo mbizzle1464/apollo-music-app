@@ -17,6 +17,8 @@ $(document).ready(function () {
     newTr.data("author", authorData);
     newTr.append("<td class='authorName'>" + authorData.firstname + " " + authorData.lastname + "</td>");
     newTr.append("<td class='authorUserName'> " + authorData.username + "</td>");
+    newTr.append("<td class='authorUserName'> " + authorData.favoriteSong + "</td>");
+    newTr.append("<td class='authorUserName'> " + authorData.favoriteArtist + "</td>");
     newTr.append("<td class='authorID'><a href='/cms?author_id=" + authorData.id + "'>Profile</a></td>");
     return newTr;
   }
@@ -30,6 +32,7 @@ $(document).ready(function () {
       renderAuthorList(rowsToAdd);
     });
   }
+
 
   function renderAuthorList(rows) {
     authorList.children().not(":last").remove();

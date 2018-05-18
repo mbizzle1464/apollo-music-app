@@ -1,22 +1,39 @@
+.author-table {
+    font-family: 'Raleway', sans-serif;   
+
+}
+
+thead{
+    color:red;
+    font-size: 18px; 
+
+}
 
 #content{
     display: grid;
     grid-template-columns: 33.3%, 33.3%
 }
+
+label {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+
+
+}
 .authorName {
-    color: red;
-    font-size: 24px;    
+    font-size: 24px; 
+    font-family: 'Raleway', sans-serif;   
 }
 .authorUserName {
-    color: blue;
     font-size: 16px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+    font-family: 'Raleway', sans-serif;
 }
 .post {
     font-size: 22px;
     line-height: 200%;
-    font-family: Arial, Helvetica, sans-serif;  
+    font-family: 'Roboto', sans-serif;
+
 }
 .break { 
-    border-bottom: 2px solid black; 
+    border-bottom: 2px solid black 
 }
