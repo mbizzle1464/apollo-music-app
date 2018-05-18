@@ -13,19 +13,19 @@ exports.signin = function (req, res) {
     res.render('signin');
 
 }
-exports.dashboard = function (req, res) {
 
-    res.render('users');
-
-}
-exports.dashboard = function (req, res) {
-
-    res.render('cms');
+exports.cms = function (req, res) {
+    var author = req.user;  
+    console.log("11111111111111111111111111\n11111111111111111111111111\n11111111111111111111111111\n11111111111111111111111111\n11111111111111111111111111\n")
+    console.log(req.user);  
+    res.render('cms', {author:author});
 
 }
-exports.dashboard = function (req, res) {
-
-    res.render('dashboard');
+exports.dashboard = function (req, res) { 
+    var author = {
+        id: req.user.id
+    }
+    res.render('dashboard',{author:author});
 
 }
 
