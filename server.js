@@ -1,3 +1,6 @@
+// Global Dependencies 
+// =============================================================
+
 var express = require('express');
 var passport = require('passport');
 var session = require('express-session');
@@ -27,13 +30,15 @@ app.use(session({
   resave: true,
   saveUninitialized: true
 }));
+
+//Initialize Passport
 app.use(passport.initialize());
 app.use(passport.session());
 
-//db
+//Require Database Models 
 var db = require("./models");
 
-//For Handlebars
+//For Handlebars Views
 app.set('views', './views')
 app.engine('hbs', exphbs({
   defaultLayout: 'main',
@@ -41,17 +46,17 @@ app.engine('hbs', exphbs({
 }));
 app.set('view engine', '.hbs');
 
-// Routes
+// Route For Passport
 // =============================================================
-//Routes
 var authRoute = require('./routes/auth.js')(app, passport);
 //load passport strategies
 require('./config/passport/passport.js')(passport, db.user);
+// Routes
+// =============================================================
 var postController = require("./controllers/post-controller.js");
 var authorController = require("./controllers/author-controller.js");
 var viewController = require("./controllers/view-controller.js");
 var profileController = require("./controllers/profile-controller.js");
-
 app.use(postController);
 app.use(authorController);
 app.use(profileController);
@@ -61,7 +66,7 @@ app.use(viewController);
 // =============================================================
 db.sequelize.sync().then(function () {
   app.listen(PORT, function () {
-    console.log("App listening on PORT " + PORT);
+    console.log("App listening on http://localhost:" + PORT);
   });
 });
 
