@@ -1,3 +1,6 @@
+// For Passport Validation
+// =============================================================
+
 var authController = require('../controllers/auth-controller.js');
 var db = require("../models");
 
