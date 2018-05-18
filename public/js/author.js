@@ -1,6 +1,8 @@
 $(document).ready(function () {
   var authorList = $("tbody");
   var authorContainer = $(".author-container");
+  var search = $("#search-input");
+  $(search).on("keyup", searchInput);
 
   getAuthors();
 
@@ -45,6 +47,14 @@ $(document).ready(function () {
     alertDiv.addClass("alert alert-danger");
     alertDiv.text("No Friends to view.");
     authorContainer.append(alertDiv);
+  }
+
+  function searchInput() {
+    event.preventDefault();
+    var value = $(this).val().toLowerCase();
+    $("#author-table tr").filter(function () {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
   }
 
 

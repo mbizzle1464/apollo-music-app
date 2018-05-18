@@ -7,6 +7,8 @@ $(document).ready(function () {
   var authorId;
   var updating = false;
 
+  
+
   if (url.indexOf("?post_id=") !== -1) {
     postId = url.split("=")[1];
     getPostData(postId, "post");
@@ -19,13 +21,17 @@ $(document).ready(function () {
   function getAuthors() {
     $.get("/api/authors").done(function (data) {
       console.log("authors", data);
+      for (var i = 0; i < data.length; i++) {
+        //console.log(data[i]);  
+        authorId = data[i].id;
+      }
+      profile = url + authorId;  
+      console.log(profile);
     });
   }
 
-
   function handleFormSubmit(event) {
     $.get("/api/authors", function (data) {
-      var rowsToAdd = [];
       for (var i = 0; i < data.length; i++) {
         //console.log(data[i]);  
         authorId = data[i].id;
@@ -71,6 +77,7 @@ $(document).ready(function () {
         return;
     }
     $.get(queryUrl, function (data) {
+      console.log(data);
       if (data) {
         console.log(data.AuthorId || data.id)
         bodyInput.val(data.body);
@@ -79,7 +86,6 @@ $(document).ready(function () {
       }
     });
   }
-
 
   function updatePost(post) {
     $.ajax({

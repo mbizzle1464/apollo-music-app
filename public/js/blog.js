@@ -12,6 +12,19 @@ $(document).ready(function () {
   else {
     getPosts();
   }
+linkProfile();  
+
+  function linkProfile(author) {
+    $.get("/api/authors").done(function (data) {
+      console.log("authors", data);
+      for (var i = 0; i < data.length; i++) {
+        //console.log(data[i]);  
+        authorId = data[i].id;
+      }
+      profile = url + authorId;
+      console.log(profile);
+    });
+  }
 
   function getPosts(author) {
     authorId = author || "";
