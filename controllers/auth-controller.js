@@ -1,3 +1,6 @@
+// Routes for authentication
+// =============================================================
+
 var exports = module.exports = {}
 
 exports.signup = function (req, res) {
