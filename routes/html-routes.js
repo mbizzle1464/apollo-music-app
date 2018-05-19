@@ -5,7 +5,7 @@ var router = require('express').Router();
 var db = require("../models");
 
 
-    router.get('/cms/author/:id', function (req, res) {
+    router.get('/cms/:id', function (req, res) {
             db.Author.findOne({
                 where: {
                     id: req.params.id

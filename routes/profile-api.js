@@ -15,7 +15,7 @@ router.get("/api/cms", function (req, res) {
     });
 });
 
-router.get("/api/cms/author/:id", function (req, res) {
+router.get("/api/cms/:id", function (req, res) {
     db.Author.findOne({
         where: {
             id: req.params.id
@@ -33,7 +33,13 @@ router.post("/api/cms", function (req, res) {
     });
 });
 
-router.put("/api/cms", function (req, res) {
+router.post("/api/cms/:id", function (req, res) {
+    db.Author.create(req.body).then(function (dbAuthor) {
+        res.json(dbAuthor);
+    });
+});
+
+router.put("/api/cms:id", function (req, res) {
     console.log(req.body);
     db.Author.update(
         req.body, {

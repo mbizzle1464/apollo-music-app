@@ -19,7 +19,7 @@ $(document).ready(function () {
     newTr.append("<td class='authorUserName'> " + authorData.username + "</td>");
     newTr.append("<td class='authorUserName'> " + authorData.favoriteSong + "</td>");
     newTr.append("<td class='authorUserName'> " + authorData.favoriteArtist + "</td>");
-    newTr.append("<td class='authorID'><a href='/cms?author_id=" + authorData.id + "'>Profile</a></td>");
+    newTr.append("<td class='authorID'><a href='/cms/" + authorData.id + "'>Profile</a></td>");
     return newTr;
   }
 

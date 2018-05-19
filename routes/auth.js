@@ -19,7 +19,7 @@ module.exports = function (app, passport) {
 
     app.get('/dashboard', isLoggedIn, authController.dashboard);
 
-    app.get('/cms', isLoggedIn, authController.cms);
+    app.get('/posts', isLoggedIn, authController.posts);
 
     app.get('/authors', isLoggedIn, authController.authors);
     

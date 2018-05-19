@@ -22,7 +22,8 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 
 // Static directory
-app.use(express.static("public"));
+app.use(express.static(__dirname + '/public'));
+
 //Express - Session
 app.use(session({
   secret: 'secret',

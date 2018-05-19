@@ -23,15 +23,13 @@ exports.authors = function (req, res) {
     });
 
 }
-exports.cms = function (req, res) {
+exports.posts = function (req, res) {
     var author = req.user;
-    console.log(author);
-    res.render('cms', {
+    res.render('posts', {
         author: author
     });
 
 }
-
 
 exports.dashboard = function (req, res) {
     var author = {
