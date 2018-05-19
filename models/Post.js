@@ -1,13 +1,8 @@
-module.exports = function(sequelize, DataTypes) {
-  
+//Post Model for our User 's Posts
+// =============================================================
+module.exports = function (sequelize, DataTypes) {
+
   var Post = sequelize.define("Post", {
-    title: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [1]
-      }
-    },
     body: {
       type: DataTypes.TEXT,
       allowNull: false,
@@ -15,15 +10,12 @@ module.exports = function(sequelize, DataTypes) {
     },
   });
 
-  
-  Post.associate = function(models) {
-
+  Post.associate = function (models) {
     Post.belongsTo(models.Author, {
       foreignKey: {
         allowNull: false
       }
     });
   };
-
   return Post;
 };

@@ -2,6 +2,7 @@
  var bCrypt = require('bcrypt-nodejs');
  var db = require('../../models');
 
+
  module.exports = function (passport, user) {
 
      var User = db.Author;
@@ -44,7 +45,7 @@
              User.findOne({
                  where: {
                      email: email
-                 }
+                 }, 
              }).then(function (user) {
 
                  if (user) {
@@ -57,7 +58,43 @@
                          email: email,
                          password: userPassword,
                          firstname: req.body.firstname,
-                         lastname: req.body.lastname
+                         lastname: req.body.lastname,
+                         username: req.body.username,
+                         picture: req.body.picture,
+                         favoriteSong: req.body.favoriteSong,
+                         favoriteArtist: req.body.favoriteArtist,
+                         favoriteCoverBand: req.body.favoriteCoverBand,
+                         genreRock: req.body.genreRock,
+                         genreSoftRock: req.body.genreSoftRock,
+                         genreEasyListen: req.body.genreEasyListen,
+                         genreClassicRock: req.body.genreClassicRock,
+                         genreTodayHits: req.body.genreTodayHits,
+                         genrePopRock: req.body.genrePopRock,
+                         genrePunk: req.body.genrePunk,
+                         genrePunkPop: req.body.genrePunkPop,
+                         genreCountry: req.body.genreCountry,
+                         genreRap: req.body.genreRap,
+                         genreRNB: req.body.genreRNB,
+                         genreKPop: req.body.genreKPop,
+                         genreClassical: req.body.genreClassical,
+                         genreYachtRock: req.body.genreYachtRock,
+                         decadeTwenties: req.body.decadeTwenties,
+                         decadeThirties: req.body.decadeThirties,
+                         decadeforties: req.body.decadeforties,
+                         decadeFifties: req.body.decadeFifties,
+                         decadeSixties: req.body.decadeSixties,
+                         decadeSeventies: req.body.decadeSeventies,
+                         decadeEighties: req.body.decadeEighties,
+                         decadeNineties: req.body.decadeNineties,
+                         decadeNoughties: req.body.decadeNoughties,
+                         listenRadio: req.body.listenRadio,
+                         listenSatelitte: req.body.listenSatelitte,
+                         listenCassette: req.body.listenCassette,
+                         listenEightTrack: req.body.listenEightTrack,
+                         listenCompactDisc: req.body.listenCompactDisc,
+                         listenOnline: req.body.listenOnline,
+                         listenRecord: req.body.listenRecord,
+                         profileBody: req.body.profileBody,
                      };
 
 

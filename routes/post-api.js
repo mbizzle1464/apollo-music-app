@@ -1,13 +1,12 @@
-// Requiring our models
+// Dependencies
+// =============================================================
+var path = require("path");
+var router = require('express').Router();
 var db = require("../models");
-var express = require('express');
-var router = express.Router();
-
 
 // Routes
 // =============================================================
 
-// GET route for getting all of the posts
 router.get("/api/posts", function (req, res) {
   var query = {};
   if (req.query.author_id) {
@@ -24,26 +23,22 @@ router.get("/api/posts", function (req, res) {
   });
 });
 
-// Get rotue for retrieving a single post
 router.get("/api/posts/:id", function (req, res) {
   db.Post.findOne({
     where: {
       id: req.params.id
     }
   }).then(function (dbPost) {
-    console.log(dbPost);
     res.json(dbPost);
   });
 });
 
-// POST route for saving a new post
 router.post("/api/posts", function (req, res) {
   db.Post.create(req.body).then(function (dbPost) {
-    res.json(dbPost);
+    res.render('dashboard');
   });
 });
 
-// DELETE route for deleting posts
 router.delete("/api/posts/:id", function (req, res) {
   db.Post.destroy({
     where: {
@@ -54,7 +49,6 @@ router.delete("/api/posts/:id", function (req, res) {
   });
 });
 
-// PUT route for updating posts
 router.put("/api/posts", function (req, res) {
   db.Post.update(
     req.body, {

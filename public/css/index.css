@@ -1,5 +1,49 @@
+.author-table {
+    font-family: 'Raleway', sans-serif;   
 
-#content{
-    display: grid;
-    grid-template-columns: 33.3%, 33.3%
+}
+
+thead{
+    color:red;
+    font-size: 18px; 
+
+}
+
+#profilebody{
+    float: right;
+    width: 470px;
+    display: inline-block;
+}
+
+#profilehead{
+    width: 250px;
+    display: inline-block;
+}
+
+label {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+
+
+}
+#profilename {
+    font-size: 24px; 
+    font-family: 'Raleway', sans-serif;   
+}
+#username {
+    font-size: 16px;
+    font-family: 'Raleway', sans-serif;
+}
+#userbody {
+    font-size: 16px;
+    font-family: 'Raleway', sans-serif;
+}
+.post {
+    font-size: 22px;
+    line-height: 200%;
+    font-family: 'Roboto', sans-serif;
+
+}
+.break { 
+    border-bottom: 2px solid black 
 }

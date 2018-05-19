@@ -1,3 +1,8 @@
+// Routes for authentication
+// =============================================================
+var db = require("../models");
+
+
 var exports = module.exports = {}
 
 exports.signup = function (req, res) {
@@ -10,19 +15,29 @@ exports.signin = function (req, res) {
     res.render('signin');
 
 }
-exports.dashboard = function (req, res) {
 
-    res.render('users');
-
-}
-exports.dashboard = function (req, res) {
-
-    res.render('cms');
+exports.authors = function (req, res) {
+    var author = req.user;
+    res.render('authors', {
+        author: author
+    });
 
 }
-exports.dashboard = function (req, res) {
+exports.posts = function (req, res) {
+    var author = req.user;
+    res.render('posts', {
+        author: author
+    });
 
-    res.render('dashboard');
+}
+
+exports.dashboard = function (req, res) {
+    var author = {
+        id: req.user.id
+    }
+    res.render('dashboard', {
+        author: author
+    });
 
 }
 

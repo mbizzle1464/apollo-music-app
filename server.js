@@ -1,3 +1,6 @@
+// Global Dependencies 
+// =============================================================
+
 var express = require('express');
 var passport = require('passport');
 var session = require('express-session');
@@ -19,7 +22,7 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 
 // Static directory
-app.use(express.static("public"));
+app.use(express.static(__dirname + '/public'));
 
 //Express - Session
 app.use(session({
@@ -27,38 +30,47 @@ app.use(session({
   resave: true,
   saveUninitialized: true
 }));
+
+//Initialize Passport
 app.use(passport.initialize());
 app.use(passport.session());
 
-//db
+//Require Database Models 
 var db = require("./models");
 
-//For Handlebars
+//For Handlebars Views
 app.set('views', './views')
 app.engine('hbs', exphbs({
   defaultLayout: 'main',
-  extname: '.hbs'
+  extname: '.hbs',
+  partial: 'views/partials'
 }));
 app.set('view engine', '.hbs');
 
-// Routes
+// Route File for Res.Render
 // =============================================================
-//Routes
 var authRoute = require('./routes/auth.js')(app, passport);
 //load passport strategies
 require('./config/passport/passport.js')(passport, db.user);
-var postController = require("./controllers/post-controller.js");
-var authorController = require("./controllers/author-controller.js");
-var viewController = require("./controllers/view-controller.js");
 
+
+// API Routes
+// =============================================================
+var postController = require("./routes/post-api.js");
+var authorController = require("./routes/author-api.js");
+var profileController = require("./routes/profile-api.js");
+var htmlController = require("./routes/html-routes.js");
 app.use(postController);
 app.use(authorController);
-app.use(viewController);
+app.use(profileController);
+app.use(htmlController);
+
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
 db.sequelize.sync().then(function () {
   app.listen(PORT, function () {
-    console.log("App listening on PORT " + PORT);
+    console.log("App listening on http://localhost:" + PORT);
   });
 });
+

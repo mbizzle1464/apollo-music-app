@@ -1,8 +1,12 @@
+// Dependencies
+// =============================================================
+var path = require("path");
+var router = require('express').Router();
 var db = require("../models");
-var express = require('express');
-var router = express.Router();
 
-// Find all Authors and return them to the user with res.json
+// Routes
+// =============================================================
+
 router.get("/api/authors", function (req, res) {
   db.Author.findAll({
     include: [db.Post]
@@ -12,7 +16,6 @@ router.get("/api/authors", function (req, res) {
 });
 
 router.get("/api/authors/:id", function (req, res) {
-  // Find one Author with the id in req.params.id and return them to the user with res.json
   db.Author.findOne({
     where: {
       id: req.params.id
@@ -23,7 +26,6 @@ router.get("/api/authors/:id", function (req, res) {
 });
 
 router.post("/api/authors", function (req, res) {
-  // Create an Author with the data available to us in req.body
   console.log(req.body);
   db.Author.create(req.body).then(function (dbAuthor) {
     res.json(dbAuthor);
@@ -31,7 +33,6 @@ router.post("/api/authors", function (req, res) {
 });
 
 router.delete("/api/authors/:id", function (req, res) {
-  // Delete the Author with the id available to us in req.params.id
   db.Author.destroy({
     where: {
       id: req.params.id

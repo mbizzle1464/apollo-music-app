@@ -1,3 +1,6 @@
+// For Passport Validation
+// =============================================================
+
 var authController = require('../controllers/auth-controller.js');
 var db = require("../models");
 
@@ -14,10 +17,12 @@ module.exports = function (app, passport) {
         failureRedirect: '/signup'
     }));
 
-
     app.get('/dashboard', isLoggedIn, authController.dashboard);
 
+    app.get('/posts', isLoggedIn, authController.posts);
 
+    app.get('/authors', isLoggedIn, authController.authors);
+    
     app.get('/logout', authController.logout);
 
 
@@ -26,13 +31,11 @@ module.exports = function (app, passport) {
         failureRedirect: '/signin'
     }));
 
-
     function isLoggedIn(req, res, next) {
         if (req.isAuthenticated())
             return next();
 
         res.redirect('/signin');
     }
-
 
 }
