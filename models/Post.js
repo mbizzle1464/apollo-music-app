@@ -8,6 +8,10 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false,
       len: [1]
     },
+    comment: {
+      type: DataTypes.TEXT,
+      len: [1]
+    },
   });
 
   Post.associate = function (models) {
