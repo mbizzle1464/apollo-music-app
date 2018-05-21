@@ -11,13 +11,9 @@ var db = require("../models");
 
 
 router.get("/api/posts", function (req, res) {
-  var query = {};
-  if (req.query.author_id) {
-    query.AuthorId = req.query.author_id;
-  }
+ 
   db.Post.findAll({
-
-    where: query,
+  order: [['updatedAt', 'DESC']],
 
     include: [db.Author]
 
