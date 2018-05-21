@@ -4,7 +4,7 @@ var path = require("path");
 var router = require('express').Router();
 var db = require("../models");
 
-
+// This route allows the handlebars to bring in the necessary data points to populate the dynamic profile pages. 
     router.get('/cms/:id', function (req, res) {
             db.Author.findOne({
                 where: {

@@ -71,8 +71,7 @@ $(document).ready(function () {
       "text-align": "center",
       "margin-top": "50px"
     });
-    messageh2.html("No posts yet, please navigate <a href='/cms" + query +
-      "'>here</a> in order to get started.");
+    messageh2.html("No posts yet, please navigate to the post page in order to get started.");
     blogContainer.append(messageh2);
   }
 });

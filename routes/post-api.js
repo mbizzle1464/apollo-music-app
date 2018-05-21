@@ -7,6 +7,9 @@ var db = require("../models");
 // Routes
 // =============================================================
 
+// These routes provide us with the ability to see the data parsed in the api.
+
+
 router.get("/api/posts", function (req, res) {
   var query = {};
   if (req.query.author_id) {

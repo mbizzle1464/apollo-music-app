@@ -7,6 +7,8 @@ var db = require("../models");
 // Routes
 // =============================================================
 
+// These routes provide us with the ability to see the data parsed in the api. 
+
 router.get("/api/authors", function (req, res) {
   db.Author.findAll({
     include: [db.Post]
