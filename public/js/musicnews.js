@@ -20,12 +20,6 @@
               var panelTitle = $('<div class="panel-title authorUserName">');
               var newDiv = $('<div class = "date">');
               var panelbody = $('<div class="panel-body post">');
-              var form = $('<form id="comment">');
-              var formDiv = $('<div class="comment-form" id="HCB_comment_box">');
-              var formLabel = $('<label for="comment">');
-              var textArea = $('<text placeholder="Comment" class="form-control" id="CommentBody">');
-              var inputForm = $('<input id="comment">');
-              var comment = [];
 
               var user = postResponse[i].Author.firstname + postResponse[i].Author.lastname;
               var username = postResponse[i].Author.username;
@@ -41,19 +35,6 @@
               panelbody.text('" ' + body + ' "');
               panelbody.append(newDiv);
               newDiv.append("<p>" + formattedDate + "</p>");
-              newDiv.append(form);
-              form.append(formDiv);
-              formDiv.append(formLabel);
-              formLabel.append(textArea);
-              textArea.append(inputForm);
-
-              
-// Working on leaving comments in posts. 
-              $('#CommentBody').keypress(function (e) {
-                  if (e.which === 13) {
-                      alert("you've pressed enter")
-                  }
-              });
           }
       });
 
