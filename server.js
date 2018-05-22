@@ -8,11 +8,6 @@ var bodyParser = require('body-parser');
 var cookieParser = require("cookie-parser");
 var env = require('dotenv').load();
 var exphbs = require('express-handlebars');
-var Spotify = require('node-spotify-api');
-var keys = require("./keys.js");  
-
-var spotify = new Spotify(keys.spotify);
-console.log(spotify); 
 // Sets up the Express App
 // =============================================================
 var app = express();
