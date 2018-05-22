@@ -120,3 +120,8 @@ button {
   background-color: red;
   color: white; 
  }
+
+#logo {
+  height: 50%;
+  width: 60%;
+}

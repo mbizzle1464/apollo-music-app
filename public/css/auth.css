@@ -15,7 +15,7 @@ body {
 
 h1 {
   font-family: 'Monoton', cursive;
-  color: red;
+  color: rgb(255, 153, 0);
 }
 h2, li, ul, p, h3, h4, input, label, button {
   font-family:'Raleway', sans-serif;
