@@ -32,34 +32,106 @@
 </nav>
 
 <div id="content">
-    <div id="info" class="container">
-        <div class="row">
-            <div class="col-md-2" id="profilehead">
-                {{> author}}
-                <!--<div id="profilename" class="container blog"></div>
-                    <div id="profileuser" class="container blog"></div>
-                    <div id="profileblog" class="container blog"></div>-->
-            </div>
-            <div class="col-md-2" id="musicNews">
+    <div id="info" class="row">
+        <div class="col-md-8" id="">
 
-            </div>
-            <div class="col-md-8">
-                <div class="container" id="profilebody">
-                    <h1>Profile</h1>
-                    <div class="col-md-12 panel panel-heading"><h2>My Favorites</h2>
-                    </div>
-                    <div class="panel panel-body">
-                        <div><h4>Favorite Song:</h4>{{data.favoriteSong}}</div>
-                        <div><h4>Favorite Artist:</h4> {{data.favoriteArtist}}</div>
-                        <div><h4>Favorite Cover Band:</h4> {{data.favoriteCoverBand}}</div>
-                        <div><h4>Favorite Genres:</h4>{{data.genreString}}</div> 
-                        <div><h4>Favorite Decades of Music:</h4> {{data.decadeString}}</div>
-                        <div><h4>Favorite Ways to Listen to Music:</h4> {{data.listenString}}</div>
-                    </div>
+            <div class="container" id="">
+                <h1>Profile</h1>
+                {{> author}}
+                <div class="col-md-12 panel panel-heading">
+                    <h2>My Favorites</h2>
+                </div>
+                <div class="panel panel-body">
+                    <div>
+                        <h4>Favorite Song:</h4>{{data.favoriteSong}}</div>
+                    <div>
+                        <h4>Favorite Artist:</h4> {{data.favoriteArtist}}</div>
+                    <div>
+                        <h4>Favorite Cover Band:</h4> {{data.favoriteCoverBand}}</div>
+                    <div>
+                        <h4>Favorite Genres:</h4>{{data.genreString}}</div>
+                    <div>
+                        <h4>Favorite Decades of Music:</h4> {{data.decadeString}}</div>
+                    <div>
+                        <h4>Favorite Ways to Listen to Music:</h4> {{data.listenString}}</div>
                 </div>
             </div>
         </div>
     </div>
+    <!-- Search Feature -->
+    <div id="search" class="panel panel">
+        <div class="panel-heading">
+            <h3 class="panel-title"> Search An Artist Info
+            </h3>
+
+        </div>
+        <div class="panel-body col-md-12">
+            <input class="form-control" type="text" id="search-input" placeholder="i.e. Cher">
+            <button type="submit" class="btn btn-danger submit" id="submitBtn">Submit</button>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+    <div class="row">
+
+        <div id="musicSearch"></div>
+    </div>
 </div>
 <!-- Custom Script -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.0/moment.min.js" type="text/javascript"></script>
+<script>
+    $(document).ready(function () {
+        $('#submitBtn').on('click', function () {
+            var musicBase = 'http://ws.audioscrobbler.com/2.0/';
+            var method = '?method=artist.search&artist=';
+            var query = $('#search-input').val();
+            var apiKey = '&api_key=36478d6c082aa3cdab58c638ce9436c3&format=json';
+            var musicURL = musicBase + method + query + apiKey
+            $.ajax({
+                url: musicURL,
+                method: "GET"
+            }).then(function (musicResponse) {
+                console.log(musicResponse);
+                console.log(musicResponse.results.artistmatches.artist[0]);
+                console.log(musicResponse.results.artistmatches.artist[0].image[2]);
+                console.log("https://musicbrainz.org/artist/" + musicResponse.results.artistmatches.artist[0].mbid);
+                console.log(musicResponse.results.artistmatches.artist[0].name);
+                console.log(musicResponse.results.artistmatches.artist[0].url);
+
+                var image = musicResponse.results.artistmatches.artist[0].image[2];
+                var mbid = "https://musicbrainz.org/artist/" + musicResponse.results.artistmatches.artist[0].mbid;
+                var artist = musicResponse.results.artistmatches.artist[0].name;
+                var artistURL = musicResponse.results.artistmatches.artist[0].url;
+
+
+                var musicContainer = $('#musicSearch');
+                var panelGroup = $('<div class="panel-group music-results">');
+                var panelDefault = $('<div class="panel panel-default">');
+                var panelHeading = $('<div class="panel-heading">');
+                var panelTitle = $('<div class="panel-title">');
+                var newDiv = $('<div class = "">');
+                var panelbody = $('<div class="panel-title">');
+
+                musicContainer.append(panelGroup);
+                panelGroup.append(panelDefault);
+                panelDefault.append(panelHeading);
+                panelHeading.append("<h2>" + artist + "</h2>");
+                panelHeading.append(panelTitle);
+                panelTitle.append("<a href='" + mbid + "' target='_blank'>Click here for Music Brainz Profile </a>")
+                panelTitle.append(panelbody);
+                panelbody.append("<a href='" + artistURL + "' target='_blank'>Click here for Last.FM Profile </a>");
+
+
+
+
+
+            })
+        })
+
+    });
+
+</script>
