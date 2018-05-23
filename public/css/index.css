@@ -47,3 +47,9 @@ label {
 .break { 
     border-bottom: 2px solid black 
 }
+.thumbnail {
+    width: 200px;
+}
+#signin {
+   width: 300px;
+}

@@ -19,6 +19,7 @@ h1 {
 }
 h2, li, ul, p, h3, h4, input, label, button {
   font-family:'Raleway', sans-serif;
+  color: rgba(241, 55, 8, 0.904);
 }
 
 .form-signin {
