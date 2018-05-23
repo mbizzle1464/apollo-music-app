@@ -24,7 +24,7 @@ $(document).ready(function () {
     })
 
     $('#submitBtn').on('click', function () {
-      var musicBase = 'http://ws.audioscrobbler.com/2.0/';
+      var musicBase = 'https://ws.audioscrobbler.com/2.0/';
       var method = '?method=artist.search&artist=';
       var query = $('#search-input').val();
       var apiKey = musicKey;
