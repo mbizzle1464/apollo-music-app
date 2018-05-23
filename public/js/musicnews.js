@@ -6,9 +6,9 @@
       $.get('/getkeys').then(function (keys) {
           musicKey = keys.music
           newsKey = keys.news
-          console.log(keys);
-          console.log(musicKey);
-          console.log(newsKey);
+          //console.log(keys);
+          //console.log(musicKey);
+          //console.log(newsKey);
 
           var blogContainer = $("#blog-container");
           var authorId;
@@ -19,11 +19,11 @@
                   ['createdAt', 'DESC']
               ]
           }).then(function (postResponse) {
-              console.log(postResponse);
+             // console.log(postResponse);
               for (var i = 0; i < postResponse.length; i++) {
                   var formattedDate = new Date(postResponse[i].createdAt);
                   formattedDate = moment(formattedDate).format("MMMM Do YYYY, h:mm:ss a");
-                  console.log(formattedDate);
+                 // console.log(formattedDate);
                   var panelGroup = $('<div class="panel-group blog-results">');
                   var panelDefault = $('<div class="panel panel-default">');
                   var panelHeading = $('<div class="panel-heading authorName">');
@@ -55,7 +55,7 @@
               url: newsURL,
               method: "GET"
           }).then(function (newsResponse) {
-              console.log(newsResponse);
+             // console.log(newsResponse);
 
               var articles = newsResponse.articles;
               newsContainer.append($('<h3 class="display-3">').text("Recent Articles"));
@@ -75,7 +75,7 @@
                   var newsArticleURL = articles[i].url;
                   var newsAuthor = articles[i].author;
                   var source = articles[i].source.name;
-                  console.log(newsArticle);
+                 // console.log(newsArticle);
 
                   newsContainer.append(panelGroup);
                   panelGroup.append(panelDefault);

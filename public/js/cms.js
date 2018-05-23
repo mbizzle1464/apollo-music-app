@@ -34,12 +34,12 @@ $(document).ready(function () {
         url: musicURL,
         method: "GET"
       }).then(function (musicResponse) {
-        console.log(musicResponse);
-        console.log(musicResponse.results.artistmatches.artist[0]);
-        console.log(musicResponse.results.artistmatches.artist[0].image[2]);
-        console.log("https://musicbrainz.org/artist/" + musicResponse.results.artistmatches.artist[0].mbid);
-        console.log(musicResponse.results.artistmatches.artist[0].name);
-        console.log(musicResponse.results.artistmatches.artist[0].url);
+        //console.log(musicResponse);
+        //console.log(musicResponse.results.artistmatches.artist[0]);
+        //console.log(musicResponse.results.artistmatches.artist[0].image[2]);
+        //console.log("https://musicbrainz.org/artist/" + musicResponse.results.artistmatches.artist[0].mbid);
+        //console.log(musicResponse.results.artistmatches.artist[0].name);
+        //console.log(musicResponse.results.artistmatches.artist[0].url);
 
         var image = musicResponse.results.artistmatches.artist[0].image[2];
         var mbid = "https://musicbrainz.org/artist/" + musicResponse.results.artistmatches.artist[0].mbid;
