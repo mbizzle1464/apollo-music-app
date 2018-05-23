@@ -30,45 +30,43 @@
     </div>
     <!-- /.container-fluid -->
 </nav>
-
-<div id="content">
-    <div id="info" class="row">
-        <div class="col-md-8" id="">
-
-            <div class="container" id="">
-                <h1>Profile</h1>
-                {{> author}}
-                <div class="col-md-12 panel panel-heading">
-                    <h2>My Favorites</h2>
-                </div>
-                <div class="panel panel-body">
-                    <div>
-                        <h4>Favorite Song:</h4>{{data.favoriteSong}}</div>
-                    <div>
-                        <h4>Favorite Artist:</h4> {{data.favoriteArtist}}</div>
-                    <div>
-                        <h4>Favorite Cover Band:</h4> {{data.favoriteCoverBand}}</div>
-                    <div>
-                        <h4>Favorite Genres:</h4>{{data.genreString}}</div>
-                    <div>
-                        <h4>Favorite Decades of Music:</h4> {{data.decadeString}}</div>
-                    <div>
-                        <h4>Favorite Ways to Listen to Music:</h4> {{data.listenString}}</div>
-                </div>
+<div class="row">
+    <div class="container">
+        <div class="col-md-4">
+            <h1>Profile</h1>
+            {{> author}}
+        </div>
+        <div class="col-md-8">
+            <div>
+                <h1>My Favorites</h1>
+            </div>
+            <div>
+                <div>
+                    <h4>Favorite Song:</h4>{{data.favoriteSong}}</div>
+                <div>
+                    <h4>Favorite Artist:</h4> {{data.favoriteArtist}}</div>
+                <div>
+                    <h4>Favorite Cover Band:</h4> {{data.favoriteCoverBand}}</div>
+                <div>
+                    <h4>Favorite Genres:</h4>{{data.genreString}}</div>
+                <div>
+                    <h4>Favorite Decades of Music:</h4> {{data.decadeString}}</div>
+                <div>
+                    <h4>Favorite Ways to Listen to Music:</h4> {{data.listenString}}</div>
             </div>
         </div>
     </div>
-    <!-- Search Feature -->
-    <div id="search" class="panel panel">
-        <div class="panel-heading">
-            <h3 class="panel-title"> Search An Artist Info
-            </h3>
+</div>
+<!-- Search Feature -->
+<div id="search" class="panel panel">
+    <div class="panel-heading">
+        <h3 class="panel-title"> Search An Artist Info
+        </h3>
 
-        </div>
-        <div class="panel-body col-md-12">
-            <input class="form-control" type="text" id="search-input" placeholder="i.e. Cher">
-            <button type="submit" class="btn btn-danger submit" id="submitBtn">Submit</button>
-        </div>
+    </div>
+    <div class="panel-body col-md-12">
+        <input class="form-control" type="text" id="search-input" placeholder="i.e. Cher">
+        <button type="submit" class="btn btn-danger submit" id="submitBtn">Submit</button>
     </div>
 </div>
 <br>
