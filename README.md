@@ -18,7 +18,7 @@ Our goal was to create simplicity on each page.  Create an easy to use interface
 ### Prerequisites
 
 ```
-git clone git@github.com:devolve-wtf/PetFriendFinder.git
+git clone https://github.com/mbizzle1464/apollo-music-app.git
 ```
 
 Edit /config/config.json to reflect your info
@@ -47,7 +47,7 @@ You may need to determine your password in development as some systems require a
 ### Installing
 
 ```
-cd PetFriendFinder
+cd apollo-music-app
 npm install
 ```
 
