@@ -1,6 +1,5 @@
-# Apollo Music App 
-Where Music Inspires. 
 ![Apollo Music App](/public/img/apollo.png)
+Where Music Inspires. 
 ***
 # Project Conception
 
@@ -43,9 +42,9 @@ Our goal was to create simplicity on each page.  Create an easy to use interface
 
 #### Authors:
 ***
-Michael Bizzle - [GitHub](https://github.com/mbizzle1464)
-Avery Brunner - [GitHub](https://github.com/Averybruner5924)
-Aurora De Wilde - [GitHub](https://github.com/auroradewilde)
-Shamil Arefin  - [GitHub](https://github.com/ShamilArefin)
+* Michael Bizzle - [GitHub](https://github.com/mbizzle1464)
+* Avery Brunner - [GitHub](https://github.com/Averybruner5924)
+* Aurora De Wilde - [GitHub](https://github.com/auroradewilde)
+* Shamil Arefin  - [GitHub](https://github.com/ShamilArefin)
 
 
