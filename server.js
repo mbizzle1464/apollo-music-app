@@ -8,10 +8,14 @@ var bodyParser = require('body-parser');
 var cookieParser = require("cookie-parser");
 var env = require('dotenv').load();
 var exphbs = require('express-handlebars');
+var path = require('path'); 
 // Sets up the Express App
 // =============================================================
 var app = express();
 var PORT = process.env.PORT || 8080;
+
+var musicKey = process.env.MUSIC; 
+var newsKey =process.env.NEWS;  
 
 //Body Parser Middleware
 app.use(bodyParser.urlencoded({
@@ -21,7 +25,7 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 
 // Static directory
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(path.join(__dirname , 'public')));
 
 //Express - Session
 app.use(session({
