@@ -1,5 +1,6 @@
-# project2
-
+# Apollo Music App 
+Where Music Inspires. 
+***
 # Project Requirements
 
 This document outlines the base requirements for Project 2.
