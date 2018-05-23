@@ -15,6 +15,49 @@ In Greek Mythology, Apollo was the God of the Sun, the Light, the Music, and Pro
 
 Our goal was to create simplicity on each page.  Create an easy to use interface that was produced calming affects for our users to create, educate, and learn in a stress –free environment.
 
+### Prerequisites
+
+```
+git clone git@github.com:devolve-wtf/PetFriendFinder.git
+```
+
+Edit /config/config.json to reflect your info
+You may need to determine your password in development as some systems require a password
+
+```javascript
+{
+  "development": {
+    "username": "root",
+    "password": "",
+    "database": "apollo",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "use_env_variable": "JAWSDB_URL",
+    "dialect": "mysql"
+  },
+  "production": {
+    "use_env_variable": "JAWSDB_URL",
+    "dialect": "mysql"
+  }
+  }
+
+```
+### Installing
+
+```
+cd PetFriendFinder
+npm install
+```
+
+## Deployment
+
+```
+node server.js
+```
+
+
 ### Technologies Used 
 * nodeJS
 * Express
