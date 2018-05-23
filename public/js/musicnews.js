@@ -31,7 +31,7 @@
                   var newDiv = $('<div class = "date">');
                   var panelbody = $('<div class="panel-body post">');
 
-                  var user = postResponse[i].Author.firstname + postResponse[i].Author.lastname;
+                  var user = postResponse[i].Author.firstname +  postResponse[i].Author.lastname;
                   var username = postResponse[i].Author.username;
                   var body = postResponse[i].body
 
