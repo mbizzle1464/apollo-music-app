@@ -10,20 +10,18 @@
           //console.log(musicKey);
           //console.log(newsKey);
 
-          var blogContainer = $("#blog-container");
-          var authorId;
-          var postBody;
-
           $.get("/api/posts", {
               order: [
                   ['createdAt', 'DESC']
               ]
           }).then(function (postResponse) {
-             // console.log(postResponse);
+              // console.log(postResponse);
               for (var i = 0; i < postResponse.length; i++) {
                   var formattedDate = new Date(postResponse[i].createdAt);
+                  var blogContainer = $("#blog-container");
+
                   formattedDate = moment(formattedDate).format("MMMM Do YYYY, h:mm:ss a");
-                 // console.log(formattedDate);
+                  // console.log(formattedDate);
                   var panelGroup = $('<div class="panel-group blog-results">');
                   var panelDefault = $('<div class="panel panel-default">');
                   var panelHeading = $('<div class="panel-heading authorName">');
@@ -31,7 +29,7 @@
                   var newDiv = $('<div class = "date">');
                   var panelbody = $('<div class="panel-body post">');
 
-                  var user = postResponse[i].Author.firstname +  postResponse[i].Author.lastname;
+                  var user = postResponse[i].Author.firstname + postResponse[i].Author.lastname;
                   var username = postResponse[i].Author.username;
                   var body = postResponse[i].body
 
@@ -49,13 +47,13 @@
           });
 
 
-          var newsURL = 'https://newsapi.org/v2/top-headlines?sources=mtv-news'+newsKey;      
+          var newsURL = 'https://newsapi.org/v2/top-headlines?sources=mtv-news' + newsKey;
           var newsContainer = $('#newsSearch')
           $.ajax({
               url: newsURL,
               method: "GET"
           }).then(function (newsResponse) {
-             // console.log(newsResponse);
+              // console.log(newsResponse);
 
               var articles = newsResponse.articles;
               newsContainer.append($('<h3 class="display-3">').text("Recent Articles"));
@@ -75,7 +73,7 @@
                   var newsArticleURL = articles[i].url;
                   var newsAuthor = articles[i].author;
                   var source = articles[i].source.name;
-                 // console.log(newsArticle);
+                  // console.log(newsArticle);
 
                   newsContainer.append(panelGroup);
                   panelGroup.append(panelDefault);
