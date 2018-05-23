@@ -1,42 +1,51 @@
 # Apollo Music App 
 Where Music Inspires. 
+![Apollo Music App](/public/img/apollo.png)
 ***
-# Project Requirements
+# Project Conception
 
-This document outlines the base requirements for Project 2.
+The overall concept of Apollo centered around bringing music lovers and music collaborators together in one space to share, inspire, and educate one another on their passion for music. 
 
-### Requirements
+### Motivation
 
-Your project must:
+The motivation to create this application became apparent as we started researching concepts. There are a lack of collaborative, social spaces online dedicated to music. We felt empowered to begin developing a page that would allow for this type of collaboration to exist. 
 
-* Use a Node and Express Web Server;
+### UI/UX
 
-* Be backed by a MySQL Database an ORM (not necessarily Sequelize);
+In Greek Mythology, Apollo was the God of the Sun, the Light, the Music, and Prophecy. We felt inclined to incorporate these elements as we styled the page. 
 
-* Have both GET and POST routes for retrieving and adding new data;
+Our goal was to create simplicity on each page.  Create an easy to use interface that was produced calming affects for our users to create, educate, and learn in a stress –free environment.
 
-* Be deployed using Heroku (with Data);
+### Technologies Used 
+* nodeJS
+* Express
+* Handlebars
+* Sequelize
+* Model View Controller (MVC) Paradigm
+* Last.FM API 
+* News API
+* Passport.js Authentication
+* Heroku Deployment 
+* npm packages
+    * bcrypt-nodejs
+    * body-parser
+    * cookie-parser
+    * dotenv
+    * express
+    * express-handlebars
+    * express-session
+    * mysql2
+    * newsapi
+    * passport
+    * passport-local
+    * path
+    * sequelize
 
-* Utilize at least one new library, package, or technology that we haven’t discussed;
+#### Authors:
+***
+Michael Bizzle - [GitHub](https://github.com/mbizzle1464)
+Avery Brunner - [GitHub](https://github.com/Averybruner5924)
+Aurora De Wilde - [GitHub](https://github.com/auroradewilde)
+Shamil Arefin  - [GitHub](https://github.com/ShamilArefin)
 
-* Have a polished frontend / UI;
 
-* Have folder structure that meets MVC Paradigm;
-
-* Meet good quality coding standards (indentation, scoping, naming).
-
-* Must not expose sensitive API key information on the server, see [Protecting-API-Keys-In-Node.md](../../../10-nodejs/03-Supplemental/Protecting-API-Keys-In-Node.md)
-
-### Suggestions
-
-Your project _should_:
-
-* Incorporate Basic Testing Framework, see [Project Suggestions](../Suggestions/README.md);
-
-* Use Handlebars for Server-Side Templating
-
-* Incorporate Authentication (JSON Web Tokens, Sessions, Etc.)
-
-* Use an existing public dataset to power the database
-
-* Create a migration strategy for sharing data across team members.
